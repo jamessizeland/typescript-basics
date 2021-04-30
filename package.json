@@ -6,7 +6,7 @@
   "author": "James Sizeland <jamessizeland@gmail.com>",
   "license": "MIT",
   "scripts": {
-    
+    "test": "ts-node -s index.ts"
   },
   "devDependencies": {
     "ts-node": "^9.1.1",

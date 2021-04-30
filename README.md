@@ -24,11 +24,13 @@ initialise typeScript
 npx tsc --init
 ```
 
-test our our script in the console:
+test our our script in the console based on a package.json script we've defined:
 
 ```bash
-npx run index.ts
+yarn test
 ```
+
+Identify the type of a variable with this very handy command:
 
 ```bash
 ctrl+k ctrl+i
