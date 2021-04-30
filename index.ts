@@ -1,3 +1,9 @@
+import tsFunctions from "./functions"
+
+/*
+* Basics
+*/
+
 let userName: string = "Jack";
 let hasLoggedIn: boolean = true;
 
@@ -35,3 +41,28 @@ const ids: Record<number, string> = {
 }
 
 ids[30] = "c";
+
+// Conditionals
+
+if (ids[30] === "D") {
+
+}
+
+// let typeScript infer as much as you like
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+[1,2,3,4].forEach((e) => console.log(e));
+
+const out = [1,2,3,4].map((e) => e * 10);
+
+/*
+* Functions
+*/
+
+console.log(tsFunctions.addNumbers(1,2))
+
+console.log(tsFunctions.addStrings("john","jack"));
+
+console.log(tsFunctions.addStrings("steve"));
