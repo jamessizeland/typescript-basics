@@ -10,7 +10,16 @@ const tsFunctions = {
     fetchData: (url: string): Promise<string> => Promise.resolve(`Data from ${url}`),
     introduce: function (salutation: string, ...names:string[]): string {
         return `${salutation} ${names.join(' ')}`
-    }
+    },
+    getName: (user: {first: string; last: string;}): string => {
+        return `${user.first} ${user.last}`;
+    },
+    getNameTyped: (user: {first: string; last: string;}): string => {
+        return `${user?.first} ${user?.last}`;
+    },
+    getNameTyped2: (user: {first: string; last: string;}): string => {
+        return `${user?.first ?? 'first'} ${user?.last ?? 'last'}`;
+    },
 }
 
 

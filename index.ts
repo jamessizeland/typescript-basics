@@ -66,3 +66,5 @@ console.log(tsFunctions.addNumbers(1,2))
 console.log(tsFunctions.addStrings("john","jack"));
 
 console.log(tsFunctions.addStrings("steve"));
+
+console.log(tsFunctions.getName({first:"James", last:"Sizeland"}))
