@@ -7,6 +7,7 @@ import combine from './typescript-examples/unions';
 import addAndHandle, {printResult} from './typescript-examples/functions'
 import generateError from './typescript-examples/never'
 import printEmployeeInformation, {e2} from './typescript-advanced/typeGuards'
+import errorBag from './typescript-advanced/typeCasting';
 
 add(5, 7, true);
 console.log(person);
@@ -37,6 +38,9 @@ function App() {
       <br/>
       <button onClick={() => generateError("error has been generated", Math.floor(Math.random()*10))
       } >Throw Error</button>
+      <br/>
+      <input id='user-input' type='text' value='some text'/>
+      <p>{JSON.stringify(errorBag)}</p>
     </div>
   );
 }
