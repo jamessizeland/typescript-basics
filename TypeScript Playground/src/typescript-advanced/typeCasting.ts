@@ -41,5 +41,15 @@ const result = add('Max', ' Schwartz');
 result.split(' ');
 
 // Optional Chaining
+const isJob = Math.random() > 0.5;
+const fetchedUserData = {
+    id: 'u1',
+    name: 'Max',
+    job: isJob ? {title: 'CEO', description: 'My own company'} : {}
+};
+// don't know for certain if the job will exist on this object
+console.log(fetchedUserData?.job?.title);
+
+// nullish data
 
 export default errorBag;
