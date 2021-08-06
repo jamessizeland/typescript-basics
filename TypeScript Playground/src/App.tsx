@@ -1,33 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
-
-function App() {
-
-  function add(n1: number, n2: number, print: boolean) {
-    if (print) console.log(n1, n2, n1+n2);
-    return n1 + n2;
-  }
+import {add, person} from './typescript-examples/basics';
+import tuple from './typescript-examples/tuples'
+import person2 from './typescript-examples/enums';
+import combine from './typescript-examples/unions';
+import addAndHandle, {printResult} from './typescript-examples/functions'
+import generateError from './typescript-examples/never'
+import printEmployeeInformation, {e2} from './typescript-advanced/typeGuards'
 
 add(5, 7, true);
+console.log(person);
 
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+}
 
+console.log(tuple.implicit);
+console.log(tuple.explicit);
+console.log(person2);
+
+console.log(combine(1, 5))
+console.log(combine('max', 'ann'))
+addAndHandle(10, Math.random(), printResult);
+
+printEmployeeInformation(e2);
+
+function App() {
+  const [text, setText] = useState('click me')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>TypeScript Playground</p>
+      <p>Open the terminal to see results</p>
+      <button onClick={() => {setText("please don't click me again")
+      setTimeout((() => setText("click me")),2000)}
+      } >{text}</button>
+      <br/>
+      <button onClick={() => generateError("error has been generated", Math.floor(Math.random()*10))
+      } >Throw Error</button>
     </div>
   );
 }
